@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-kube-deploy # kubectl get deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: argocd-kube
+  template:
+    metadata:
+      labels:
+        run: argocd-kube
+    spec:
+      containers:
+      - image: 
+        name: argocd-kube
